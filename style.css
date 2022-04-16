@@ -2,16 +2,15 @@
     color: #d0d0d0
 }
 
+/*
 .highlight table td {
     padding: 5px
 }
 
 .highlight table pre {
     margin: 0
-}
+}*/
 
-.highlight .kc,
-.highlight .kt,
 .highlight .kd {
     color: #d28445
 }
@@ -170,6 +169,7 @@ pre {
     overflow: auto;
     overflow-y: hidden
 }
+
 .text_content {
     background: rgba(0, 0, 0, 0.9);
     border: 1px solid rgba(255, 255, 255, 0.15);
@@ -182,8 +182,8 @@ pre {
     height: 303px;
     position: relative;
     resize: none;
-    }
-    
+}
+
 .text_right {
     position: relative;
     float: right;
