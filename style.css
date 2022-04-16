@@ -117,7 +117,7 @@
 body {
     margin: 0;
     padding: 0;
-    background: #151515 url("../images/bkg.png") 0 0;
+    background: #151515 url("images/bkg.png") 0 0;
     color: #eaeaea;
     font-size: 16px;
     line-height: 1.5;
@@ -200,7 +200,12 @@ section img {
     max-width: 100%
 }
 
-h1,h2,h3,h4,h5,h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-weight: normal;
     font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
     color: #b5e853;
@@ -243,7 +248,7 @@ dt {
 }
 
 ul li {
-    list-style-image: url("../images/bullet.png")
+    list-style-image: url("images/bullet.png")
 }
 
 blockquote {
@@ -262,6 +267,27 @@ pre {
     word-wrap: normal;
     overflow: auto;
     overflow-y: hidden
+}
+.text_content {
+    background: rgba(0, 0, 0, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 10px;
+    font-size: 16px;
+    color: #b5e853;
+    border-radius: 2px;
+    word-wrap: normal;
+    overflow: auto;
+    overflow-y: hidden;
+    width: 478px;
+    height: 303px;
+    position: relative;
+    
+}
+.text_right {
+    position: relative;
+    float: right;
+    width: 478px;
+    height: 303px;
 }
 
 code.highlighter-rouge {
@@ -321,12 +347,12 @@ hr {
     width: 16px;
     height: 16px;
     margin: 1px 8px 0 0;
-    /*float: left;*/
+    float: left;
 }
 
 .btn-github .icon {
     opacity: 0.6;
-    background: url("../images/blacktocat.png") 0 0 no-repeat
+    background: url("images/blacktocat.png") 0 0 no-repeat
 }
 
 a {
