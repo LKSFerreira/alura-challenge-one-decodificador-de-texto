@@ -16,17 +16,18 @@
 }
 
 body {
-    margin: 0;
+    margin: auto;
     padding: 0;
     background: #151515 url("images/bkg.png") 0 0;
     color: #eaeaea;
     font-size: 16px;
     line-height: 1.5;
     font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace
+
 }
 
 .container {
-    width: 90%;
+    width: 100%;
     max-width: 1000px;
     margin: 0 auto
 }
@@ -89,7 +90,7 @@ header h2 {
 #downloads .btn {
     display: inline-block;
     text-align: center;
-    margin: 0
+    margin: auto
 }
 
 #main_content {
@@ -182,15 +183,19 @@ pre {
     height: 303px;
     position: relative;
     resize: none;
+    margin: auto;
 }
 
 .text_right {
     position: relative;
     float: right;
-    width: 478px;
-    height: 303px;
+    max-width: 478px;
+    max-height: 303px;
+    margin: auto;
+    text-align: justify;
 }
 
+/*
 code.highlighter-rouge {
     background: rgba(0, 0, 0, 0.9);
     border: 1px solid rgba(255, 255, 255, 0.15);
@@ -198,7 +203,7 @@ code.highlighter-rouge {
     margin: 0px -3px;
     color: #aa759f;
     border-radius: 2px
-}
+}*/
 
 table {
     width: 100%;
