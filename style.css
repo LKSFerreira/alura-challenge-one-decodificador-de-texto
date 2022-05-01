@@ -78,7 +78,7 @@ section {
     color: #b5e853;
     border-radius: 5px;
     word-wrap: break-word;
-    width: 480px;
+    width: 470px;
     height: 325px;
     resize: none;
 }
@@ -108,7 +108,7 @@ section {
 }
 
 .texto-saida {
-    width: 480px;
+    width: 470px;
     height: 325px;
 }
 
