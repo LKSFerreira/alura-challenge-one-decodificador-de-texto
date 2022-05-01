@@ -112,190 +112,14 @@ section {
     height: 325px;
 }
 
-.entrada > .container {
+.entrada>.container {
     margin-right: 0px;
 }
 
-.saida >.container {
+.saida>.container {
     margin-right: 160px;
     color: #d28445;
-    
-}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.highlight .kd {
-    color: #d28445;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.highlight {
-    color: #d0d0d0
-}
-
-/*
-.highlight table td {
-    padding: 5px
-}
-
-.highlight table pre {
-    margin: 0
-}*/
-
-
-
-li {
-    line-height: 1.4
-}
-
-
-
-
-@media (max-width: 1000px) {
-    header h1 {
-        margin-left: 0
-    }
-}
-
-
-
-
-#main_content {
-    width: 100%;
-    -webkit-font-smoothing: antialiased
-}
-
-section img {
-    max-width: 100%
-}
-
-
-
-#main_content h1 {
-    font-size: 30px
-}
-
-#main_content h2 {
-    font-size: 24px
-}
-
-#main_content h3 {
-    font-size: 18px
-}
-
-#main_content h4 {
-    font-size: 14px
-}
-
-#main_content h5 {
-    font-size: 12px;
-    text-transform: uppercase;
-    margin: 0 0 5px 0
-}
-
-#main_content h6 {
-    font-size: 12px;
-    text-transform: uppercase;
-    color: #999;
-    margin: 0 0 5px 0
-}
-
-dt {
-    font-style: italic;
-    font-weight: bold
-}
-
-ul li {
-    list-style-image: url("images/bullet.png")
-}
-
-blockquote {
-    color: #aaa;
-    padding-left: 10px;
-    border-left: 1px dotted #666
-}
-
-pre {
-    background: rgba(0, 0, 0, 0.9);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    padding: 10px;
-    font-size: 16px;
-    color: #b5e853;
-    border-radius: 2px;
-    word-wrap: normal;
-    overflow: auto;
-    overflow-y: hidden
-}
-
-
-
-.text_right {
-    position: relative;
-    float: right;
-    max-width: 478px;
-    max-height: 303px;
-    margin: auto;
-    text-align: justify;
-}
-
-
-table {
-    width: 100%;
-    margin: 0 0 20px 0
-}
-
-th {
-    text-align: left;
-    border-bottom: 1px dashed #b5e853;
-    padding: 5px 10px
-}
-
-td {
-    padding: 5px 10px
-}
-
-hr {
-    height: 0;
-    border: 0;
-    border-bottom: 1px dashed #b5e853;
-    color: #b5e853
 }
 
 .btn {
@@ -312,11 +136,11 @@ hr {
     font-size: 13px;
     text-decoration: none;
     text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.75);
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05)
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
 .btn:hover {
-    background: -webkit-linear-gradient(top, rgba(40, 40, 40, 0.6), rgba(35, 35, 35, 0.6) 50%, rgba(10, 10, 10, 0.8) 50%, rgba(0, 0, 0, 0.8))
+    background: -webkit-linear-gradient(top, rgba(40, 40, 40, 0.6), rgba(35, 35, 35, 0.6) 50%, rgba(10, 10, 10, 0.8) 50%, rgba(0, 0, 0, 0.8));
 }
 
 .link_style:hover {
@@ -325,7 +149,7 @@ hr {
     border-bottom: 2px solid rgba(0, 0, 0, 0.7);
     border-top: 2px solid #000;
     padding: 8px 18px;
-    background: -webkit-linear-gradient(top, rgba(40, 40, 40, 0.6), rgba(35, 35, 35, 0.6) 50%, rgba(10, 10, 10, 0.8) 50%, rgba(59, 150, 62, 0.8))
+    background: -webkit-linear-gradient(top, rgba(40, 40, 40, 0.6), rgba(35, 35, 35, 0.6) 50%, rgba(10, 10, 10, 0.8) 50%, rgba(59, 150, 62, 0.8));
 }
 
 .btn .icon {
@@ -338,28 +162,10 @@ hr {
 
 .btn-github .icon {
     opacity: 0.6;
-    background: url("images/blacktocat.png") 0 0 no-repeat
+    background: url("images/blacktocat.png") 0 0 no-repeat;
 }
 
 a {
     color: #63c0f5;
-    text-shadow: 0 0 5px rgba(104, 182, 255, 0.5)
-}
-
-.cf:before,
-.cf:after {
-    content: "";
-    display: table
-}
-
-.cf:after {
-    clear: both
-}
-
-.cf {
-    zoom: 1
-}
-
-#a-title {
-    text-decoration: none
-}
+    text-shadow: 0 0 5px rgba(104, 182, 255, 0.5);
+}    
