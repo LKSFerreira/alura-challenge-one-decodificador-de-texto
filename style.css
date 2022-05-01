@@ -19,7 +19,8 @@ header {
 .container {
     width: 100%;
     max-width: 1000px;
-    margin: 0 auto;
+    margin-left: 80px;
+    margin-right: 80px;
 }
 
 h1,
@@ -59,15 +60,14 @@ header h2 {
     color: #666
 }
 
-
 .grupo .btn {
     display: inline-block;
     text-align: center;
-    margin: auto
+    margin: auto;
 }
 
 section {
-    margin: 20px 0 20px 0;
+    margin: 10px 0 10px 0;
 }
 
 .text_content {
@@ -76,21 +76,70 @@ section {
     padding: 10px;
     font-size: 16px;
     color: #b5e853;
-    border-radius: 2px;
+    border-radius: 5px;
     word-wrap: break-word;
-    width: 478px;
-    height: 303px;
-    position: relative;
+    width: 490px;
+    height: 325px;
     resize: none;
-    margin: auto;
 }
 
-main .saida .container code {
-    width: 478px;
-    height: 303px;
-    text-align: justify;
-    color: #d28445;
+#principal {
+    margin: 0 auto;
+    width: 100%;
 }
+
+.entrada {
+    display: inline-block;
+    margin: 0 auto;
+
+}
+
+.saida {
+    float: right;
+    vertical-align: top;
+}
+
+.entrada .container {
+    margin-right: 0px;
+}
+
+.saida .container {
+    margin-left: 0px;
+}
+
+.texto-saida {
+    width: 490px;
+    height: 325px;
+}
+
+.entrada > .container {
+    margin-right: 0px;
+}
+
+.saida >.container {
+    margin-right: 160px;
+    color: #d28445;
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 .highlight .kd {
@@ -226,15 +275,6 @@ pre {
     text-align: justify;
 }
 
-/*
-code.highlighter-rouge {
-    background: rgba(0, 0, 0, 0.9);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    padding: 0px 3px;
-    margin: 0px -3px;
-    color: #aa759f;
-    border-radius: 2px
-}*/
 
 table {
     width: 100%;
