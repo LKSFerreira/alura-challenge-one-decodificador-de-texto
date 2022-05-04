@@ -20,7 +20,8 @@ function transfere() {
         textoEntrada = "Loren kliutren nggfrt çâo ééé ã ã ççç";
     }
 
-    mostraSaida();
+    mostraSaida(textoCriptografado);
+    textoCriptografado = [];
 }
 
 function testeFuncional() {
@@ -40,9 +41,11 @@ function criptografa() {
             if (letra == mapaCaracteres[j] && letra.length > 0) {
                 testeFuncional();
                 console.log(letra, mapaCaracteres[j])
-                textoCriptografado.push = kryto[i];
+                letras = textoEntrada[i].replace(mapaCaracteres[j], kryto[j])
+                textoCriptografado = textoCriptografado + letras;
                 console.log(textoCriptografado);
-            } else if (letra == " ") {
+
+            } else if (letra == "") {
                 alert("Por gentileza digite algo para criptografar");
                 break;
             }
@@ -50,8 +53,8 @@ function criptografa() {
     }return
 }
 
-function mostraSaida() {
-    textoSaida.textContent = textoEntrada;
+function mostraSaida(texto) {
+    textoSaida.textContent = texto;
 }
 
 
