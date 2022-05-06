@@ -1,23 +1,25 @@
-const textArea = document.querySelector("textarea");
-const textoSaida = document.querySelector("article");
+const textoArea = document.querySelector(".text_content");
+let textoSaida = document.querySelector(".texto-saida");
 const btnCripto = document.getElementById("cripto");
 
 const mapaCaracteres = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "ç", "Ç", "á", "Á", "é", "â", "Â", "ê", "Ê", "à", "À", "É", "ã", "Ã", "õ", "Õ", "í", "Í", "ó", "Ó", "ú", "Ú", "ñ", "Ñ", 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, "-", ",", ".", ";", "!", "?", " ",];
 
-const kryto = ["æ", "øұ", "£", "ƒ", "¿", "¥", "¤", "ð", "ẟß", "µ", "§", "%", "?", "§", "ʭ", "ʢ", "ͼ", "β", "ѧ", "ѫ", "ѳ", "ѻ", "ұ", "֏", "ᵫ", "ᵽ", "ẟ", "Ỽ", "₿", "₡", "₣", "₦", "€", "₸", "₼", "⅍", "∞", "≠", "∑", "ꟽ", "ʡ", "ʣ", "ʥ", "ʦ", "ʧ", "ʨ", "ʩ", "ω", "ϣ", "ж", "я", "ѥ", "♫", "ӿ", "ԅ", "ժ", "է", "ֆ", "շ", "ᴟ", "ᵆ", "ᵶ", "ᵫ", "‰", "‡", "‖", "†", "æ∞", "æ≠", "ø∑", "£ʡ", "£ü", "ïñ", "çz", "šf", "2ú", "ôå", "ö&", "é½", "žʩ", "æñ", "ʭʨ", "i@", "hã", "£ø", "∞ᕬ", "∽ϛ", "¥ѻ", "₼§", "?¿", "ժ¤", "ӿ♫", "≠ѫ",];
-
+const kryto = ["æ", "øұ", "æ≠", "ø∑", "£ʡ", "£ü", "ïñ", "çz", "£", "ƒ", "¿", "¥", "¤", "ð", "ẟß", "µ", "§", "2ú", "ôå", "ö&", "é½", "%", "?", "§", "ʭ", "ʢ", "ͼ", "β", "ѧ", "ѫ", "ѳ", "ѻ", "ұ", "֏", "ᵫ", "ᵽ", "ẟ", "Ỽ", "šf", "žʩ", "æñ", "ʭʨ", "₿", "₡", "₣", "₦", "€", "₸", "₼", "⅍", "∞", "≠", "∑", "ꟽ", "ʡ", "ʣ", "ʥ", "ʦ", "ʧ", "ʨ", "ʩ", "ω", "ϣ", "ж", "я", "ѥ", "♫", "ӿ", "ԅ", "ժ", "է", "ֆ", "շ", "ᴟ", "ᵆ", "ᵶ", "ᵫ", "‰", "‡", "‖", "†", "æ∞", "šf", "žʩ", "æñ", "ʭʨ", "i@", "hã", "£ø", "∞ᕬ", "∽ϛ", "¥ѻ", "₼§", "?¿", "ժ¤", "ӿ♫", "≠ѫ",];
 
 let textoEntrada = [];
 let textoCriptografado = [];
 
 
+
 // Transfere o texto do Area de texto para o lado em que deverá ser descriptogrado
 function transfere() {
+
+    textoEntrada = textoArea.value;
 
     criptografa();
 
     if (textoEntrada == "") {
-        textoEntrada = "Loren kliutren nggfrt çâo ééé ã ã ççç";
+        textoEmBranco();
     }
 
     mostraSaida(textoCriptografado);
@@ -30,8 +32,8 @@ function testeFuncional() {
 
 btnCripto.addEventListener("click", transfere); // Final da transferencia
 
+
 function criptografa() {
-    textoEntrada = textArea.value;
 
     for (let i = 0; i < textoEntrada.length; i++) {
 
@@ -50,13 +52,39 @@ function criptografa() {
                 break;
             }
         }
-    }return
+    } return
 }
 
 function mostraSaida(texto) {
     textoSaida.textContent = texto;
 }
 
+// Função copiar texto de saida para are de transferencia:
 
+const copia = document.querySelector("#copia");
+
+copia.addEventListener("click", copiaTexto);
+
+function copiaTexto() {
+
+    textoEntrada = textoArea.value;
+
+    if (textoEntrada == "") {
+        textoEmBranco();
+
+    } else if (textoSaida.textContent == " ") {
+        textoEmBranco();
+    } else {
+        navigator.clipboard.writeText(textoSaida.textContent)
+        textoSaida.textContent = "Copiado com sucesso!";
+        textoEntrada = "";
+
+        console.log(textoSaida);
+    }
+}
+
+function textoEmBranco() {
+    alert("É necessário criptografar algo antes!");
+}
 
 
