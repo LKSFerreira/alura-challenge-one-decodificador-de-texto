@@ -19,7 +19,7 @@ function transfere() {
     criptografa();
 
     if (textoEntrada == "") {
-        textoEmBranco();
+        alert("Por gentileza digite algo para criptografar");
     }
 
     mostraSaida(textoCriptografado);
