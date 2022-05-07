@@ -1,85 +1,86 @@
-const textoArea = document.querySelector(".text_content");
-let textoSaida = document.querySelector(".texto-saida");
+const areaEntrada = document.querySelector(".text_content");
+const areaSaida = document.querySelector(".texto-saida");
 const btnCripto = document.getElementById("cripto");
+
 const espaco = " ";
+const chavesCripto = ["ai", "enter", "imes", "ober", "ufat"];
+const chavesVogais = ["a", "e", "i", "o", "u"];
 
-const mapaCaracteres = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "ç", "Ç", "á", "Á", "é", "â", "Â", "ê", "Ê", "à", "À", "É", "ã", "Ã", "õ", "Õ", "í", "Í", "ó", "Ó", "ú", "Ú", "ñ", "Ñ", 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, "-", ",", ".", ";", "!", "?", espaco];
+/* Chave
+`A letra "a" é convertida para "ai"`
+`A letra "e" é convertida para "enter"`
+`A letra "i" é convertida para "imes"`
+`A letra "o" é convertida para "ober"`
+`A letra "u" é convertida para "ufat"`
+*/
 
-const kryto = ["æ", "ø", "≠", "ʡ", "ü", "ï", "£", "ƒ", "¿", "¥", "¤", "ð", "ß", "µ", "§", "å", "ö", "&", "½", "%", "?", "ʭ", "ʢ", "ͼ", "β", "ѧ", "ѫ", "ѳ", "ѻ", "ұ", "֏", "ᵫ", "ᵽ", "ẟ", "Ỽ", "š", "ž", "ʩ", "ʨ", "₿", "₡", "₣", "₦", "€", "₸", "⅍", "∑", "ꟽ", "ʣ", "ʥ", "ʦ", "ʧ", "ω", "ϣ", "ж", "я", "ѥ", "♫", "ӿ", "ԅ", "ժ", "է", "ֆ", "շ", "ᴟ", "ᵆ", "ᵶ", "‰", "‡", "‖", "†", "∞", "@", "ᕬ", "∽", "ϛ", "₼", "¢", "©", "¶", "®", "¦", "±", "¯", "·", "º", "Þ", "¬", "»", "¼", "¾", "°", espaco];
+const mapaCaracteres = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", espaco];
 
 let textoCriptografado = [];
 let textoEntrada = [];
 
+btnCripto.addEventListener("click", kryto);
 // Transfere o texto do Area de texto para o lado em que deverá ser criptogrado
-function transfere() {
-    verificaValorEntrada()
-
+function kryto() {
+    verificaEntrada();
     criptografa();
-
-    /*    if (textoEntrada == "" || textoEntrada == " ") {
-            textoEmBranco();
-        }
-    */
     mostraSaida(textoCriptografado);
     textoCriptografado = [];
 }
 // Final da transferencia
 
-btnCripto.addEventListener("click", transfere);
-
-// Cripotagra o texto contido na Area de Texto de Entrada - Utilizando um modelo de criptografia conhecido como substituição
+// Cripotagra o texto contido na Area de Texto de Entrada iterando e substituindo pelos index das arrays
 function criptografa() {
-    verificaValorEntrada()
+    textoEntrada = areaEntrada.value;
 
     for (let i = 0; i < textoEntrada.length; i++) {
-        textoEntrada[i];
-        // console.log(letra);
-
-        for (let j = 0; j < mapaCaracteres.length; j++) {
-            if (textoEntrada[i] == mapaCaracteres[j] && textoEntrada[i].length > 0) {
-
-                //console.log(textoEntrada[i], mapaCaracteres[j])
-                letras = textoEntrada[i].replace(mapaCaracteres[j], kryto[j])
-                textoCriptografado = textoCriptografado + letras;
-                //console.log(textoCriptografado);
+        //console.log(`Texto Entrada: ${textoEntrada}, letra iterada: ${textoEntrada[i]}`);
+        if (chavesVogais.indexOf(textoEntrada[i]) == -1) {
+            textoCriptografado += textoEntrada[i];
+        }
+        for (let j = 0; j < chavesVogais.length; j++) {
+            if (textoEntrada[i] == chavesVogais[j]) {
+                letra = textoEntrada[i].replace(chavesVogais[j], chavesCripto[j])
+                //console.log(true);
+                //console.log(letra);
+                textoCriptografado += letra
             }
         }
-    } return
+    }//console.log(`Texto de saída: ${textoCriptografado}`);
 }//Fim da Criptografia
 
-const btbDescripto_02 = document.querySelector("#descriptografa_02")
+
+const btnDescripto_02 = document.querySelector("#descriptografa_02")
 const btnDescripto = document.querySelector("#descriptografa_01");
-btnDescripto.addEventListener("click", descripta);
-btbDescripto_02.addEventListener("click", descripta);
 
-// Tranfere o texto criptografado para a Texto de Saida
-function descripta() {
-    verificaValorEntrada()
+btnDescripto.addEventListener("click", deskryto);
+btnDescripto_02.addEventListener("click", deskryto);
+
+function deskryto() {
+    verificaEntrada();
     descriptografa();
-
     mostraSaida(textoCriptografado);
     textoCriptografado = [];
-} // Fim da função
+}
 
-// Descriptografa o Texto de Entrada pelo método de substituição
+// Diferente da criptografia, não é possivel iterar cada index, dessa froma aplica-se o método replace(), trantando todo o valor de entradada como uma única string.
 function descriptografa() {
-    verificaValorEntrada()
+    textoEntrada = areaEntrada.value
+    arrText = textoEntrada.split(" ");
+    //console.log(arrText);
 
-    for (let i = 0; i < textoEntrada.length; i++) {
-        textoEntrada[i];
-
-        for (let j = 0; j < kryto.length; j++) {
-            if (textoEntrada[i] == kryto[j] && textoEntrada[i].length > 0) {
-
-                //console.log(textoEntrada[i], mapaCaracteres[j])
-                letras = textoEntrada[i].replace(kryto[j], mapaCaracteres[j])
-                textoCriptografado = textoCriptografado + letras;
-                console.log(textoCriptografado);
-            }
-
+    for (let i = 0; i < arrText.length; i++) {
+        //console.log("iterado: " + arrText[i]);
+        for (let j = 0; j < chavesCripto.length; j++) {
+            //console.log(chavesCripto[j]);
+            arrText[i] = arrText[i].replace(chavesCripto[j], chavesVogais[j]);
+            textoCriptografado = arrText.toString();
+            textoCriptografado = textoCriptografado.replaceAll(",", " ")
         }
-    } return
-} // Fim da função
+    }
+    //console.log(textoCriptografado);
+} //Fim da Função
+
 
 const copia = document.querySelector("#copia");
 copia.addEventListener("click", copiaTexto);
@@ -87,14 +88,14 @@ copia.addEventListener("click", copiaTexto);
 //Realiza a cópia do conteúdo criptografado, valor contido no Texto de Saida
 function copiaTexto() {
 
-    if (textoEntrada == "" || textoSaida.textContent == " ") {
-        textoEmBranco();
+    if (textoEntrada == "" || areaSaida.textContent == " ") {
+        verificaEntrada();
     } else {
-        navigator.clipboard.writeText(textoSaida.textContent);
-        textoSaida.textContent = "Copiado com sucesso!";
-        textoArea.value = "";
+        navigator.clipboard.writeText(areaSaida.textContent);
+        areaSaida.textContent = "Copiado com sucesso!";
+        areaEntrada.value = "";
     }
-}//Fim da função que copia
+}//Fim da função
 
 const cola = document.querySelector("#cola");
 cola.addEventListener("click", colaTexto);
@@ -102,17 +103,31 @@ cola.addEventListener("click", colaTexto);
 //Cola o conteúdo da area de transferência para a Área de Texto de Entrada
 function colaTexto() {
     navigator.clipboard.readText().then(
-        clipTexto => textoArea.value = clipTexto);
-}//fim da função colar
+        clipTexto => areaEntrada.value = clipTexto);
+    areaSaida.textContent = " ";
+}// Fim da função
 
-function textoEmBranco() {
-    alert("É necessário criptografar algo antes!");
-}
 
-function mostraSaida(texto) {
-    textoSaida.textContent = texto;
-}
 
-function verificaValorEntrada() {
-    textoEntrada = textoArea.value;
+// Verifica se o usuario tentou criptografar um espaço em branco ou algum caracter não autorizado.
+function verificaEntrada() {
+    textoEntrada = areaEntrada.value;
+
+    if (textoEntrada == " " || textoEntrada == undefined || textoEntrada == "") {
+        alert("Por gentileza digite algo para criptografar.");
+        areaEntrada.value = "";
+    }
+
+    for (let i = 0; i < textoEntrada.length; i++) {
+        if (mapaCaracteres.indexOf(textoEntrada[i]) === -1) {
+            //console.log("NÃO PASSOU NO FILTRO");
+            alert("Por gentileza utilize apenas caracteres minúsculos e sem assentos.");
+            areaEntrada.value = "";
+            return
+        }
+    }
+} // Fim da função
+
+function mostraSaida(frase) {
+    areaSaida.textContent = frase;
 }
