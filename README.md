@@ -1,2 +1,5 @@
-# alura-challenge-one-decodificador-de-texto
- Desafio Alura - Decodificador de Texto
+# Alura Challenge - Oracle ONE - Decodificador de Texto
+
+## Iniciante em Programação
+
+Desafio proposto pela Alura & Projeto ONE, consiste em desenvolver uma aplicação Web para criptografar e descriptografar um texto por meio de um algoritmo de substiução.
