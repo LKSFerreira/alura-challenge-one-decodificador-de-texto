@@ -79,7 +79,7 @@ function descriptografa() {
         //console.log("iterado: " + arrText[i]);
         for (let j = 0; j < chavesCripto.length; j++) {
             //console.log(chavesCripto[j]);
-            arrText[i] = arrText[i].replace(chavesCripto[j], chavesVogais[j]);
+            arrText[i] = arrText[i].replaceAll(chavesCripto[j], chavesVogais[j]);
             textoCriptografado = arrText.toString();
             textoCriptografado = textoCriptografado.replaceAll(",", " ")
         }
