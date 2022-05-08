@@ -1,6 +1,6 @@
 const areaEntrada = document.querySelector(".text_content");
 const areaSaida = document.querySelector(".texto-saida");
-const btnCripto = document.getElementById("cripto");
+const btnCripto = document.querySelector("#cripto");
 
 const espaco = " ";
 const chavesCripto = ["ai", "enter", "imes", "ober", "ufat"];
@@ -19,9 +19,10 @@ const mapaCaracteres = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "
 let textoCriptografado = [];
 let textoEntrada = [];
 
-btnCripto.addEventListener("click", kryto);
+btnCripto.addEventListener("click", cripto);
+
 // Transfere o texto do Area de texto para o lado em que deverá ser criptogrado
-function kryto() {
+function cripto() {
     verificaEntrada();
     criptografa();
     mostraSaida(textoCriptografado);
@@ -49,16 +50,21 @@ function criptografa() {
     }//console.log(`Texto de saída: ${textoCriptografado}`);
 }//Fim da Criptografia
 
-
-const btnDescripto_02 = document.querySelector("#descriptografa_02")
 const btnDescripto = document.querySelector("#descriptografa_01");
+const btnDescripto_02 = document.querySelector("#descriptografa_02")
 
 btnDescripto.addEventListener("click", deskryto);
 btnDescripto_02.addEventListener("click", deskryto);
 
+// Tranfere o texto criptografado para a Texto de Saida
 function deskryto() {
     verificaEntrada();
     descriptografa();
+
+    if (testeCriptografado) {
+        mostraSaida(textoCriptografado);
+        areaEntrada.value = "";
+    }
     mostraSaida(textoCriptografado);
     textoCriptografado = [];
 }
@@ -78,6 +84,7 @@ function descriptografa() {
             textoCriptografado = textoCriptografado.replaceAll(",", " ")
         }
     }
+    testeCriptografado = true;
     //console.log(textoCriptografado);
 } //Fim da Função
 
@@ -113,10 +120,7 @@ function colaTexto() {
 function verificaEntrada() {
     textoEntrada = areaEntrada.value;
 
-    if (textoEntrada == " " || textoEntrada == undefined || textoEntrada == "") {
-        alert("Por gentileza digite algo para criptografar.");
-        areaEntrada.value = "";
-    }
+    textoEmBranco();
 
     for (let i = 0; i < textoEntrada.length; i++) {
         if (mapaCaracteres.indexOf(textoEntrada[i]) === -1) {
@@ -130,4 +134,11 @@ function verificaEntrada() {
 
 function mostraSaida(frase) {
     areaSaida.textContent = frase;
+}
+
+function textoEmBranco() {
+    if (textoEntrada == " " || textoEntrada == undefined || textoEntrada == "") {
+        alert("Por gentileza digite algo para criptografar.");
+        areaEntrada.value = "";
+    }
 }
