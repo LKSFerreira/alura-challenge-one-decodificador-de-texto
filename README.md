@@ -1,4 +1,4 @@
-# Alura Challenge - ONE - Decodificador de Texto
+# Alura Challenge ONE - Decodificador de Texto
 
 ## Iniciante em Programação
 
